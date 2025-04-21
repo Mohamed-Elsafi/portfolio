@@ -1,0 +1,609 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Mohamed El-Safi | Senior Site Engineer</title>
+    <style>
+        /* Base Styles */
+        :root {
+            /* Primary Colors */
+            --deep-blue: #1A365D;
+            --steel-gray: #4A4E69;
+            --sand-beige: #D4B483;
+            
+            /* Secondary Colors */
+            --accent-orange: #E07A5F;
+            --concrete-gray: #8D99AE;
+            
+            /* Neutral Colors */
+            --off-white: #F8F9FA;
+            --dark-gray: #343A40;
+            --light-gray: #E9ECEF;
+            
+            /* Spacing */
+            --space-unit: 8px;
+            --space-xs: calc(var(--space-unit) * 1);
+            --space-sm: calc(var(--space-unit) * 2);
+            --space-md: calc(var(--space-unit) * 3);
+            --space-lg: calc(var(--space-unit) * 5);
+            --space-xl: calc(var(--space-unit) * 10);
+        }
+        
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        body {
+            font-family: 'Roboto', sans-serif;
+            color: var(--dark-gray);
+            background-color: var(--off-white);
+            line-height: 1.6;
+        }
+        
+        h1, h2, h3, h4, h5, h6 {
+            font-family: 'Montserrat', sans-serif;
+            font-weight: 700;
+            margin-bottom: var(--space-md);
+            color: var(--deep-blue);
+        }
+        
+        h1 {
+            font-size: 3rem;
+        }
+        
+        h2 {
+            font-size: 2.25rem;
+        }
+        
+        h3 {
+            font-size: 1.75rem;
+        }
+        
+        p {
+            margin-bottom: var(--space-md);
+        }
+        
+        a {
+            color: var(--deep-blue);
+            text-decoration: none;
+            transition: color 0.2s ease;
+        }
+        
+        a:hover {
+            color: var(--accent-orange);
+        }
+        
+        .container {
+            width: 100%;
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 var(--space-md);
+        }
+        
+        .btn {
+            display: inline-block;
+            padding: var(--space-sm) var(--space-md);
+            background-color: var(--deep-blue);
+            color: white;
+            border: none;
+            border-radius: 4px;
+            font-weight: 500;
+            cursor: pointer;
+            transition: background-color 0.2s ease;
+        }
+        
+        .btn:hover {
+            background-color: var(--steel-gray);
+            color: white;
+        }
+        
+        .btn-accent {
+            background-color: var(--accent-orange);
+        }
+        
+        .btn-accent:hover {
+            background-color: #c86a52;
+        }
+        
+        .section {
+            padding: var(--space-xl) 0;
+        }
+        
+        .section-title {
+            text-align: center;
+            margin-bottom: var(--space-xl);
+            position: relative;
+        }
+        
+        .section-title:after {
+            content: '';
+            display: block;
+            width: 80px;
+            height: 4px;
+            background-color: var(--accent-orange);
+            margin: var(--space-sm) auto 0;
+        }
+        
+        /* Header Styles */
+        header {
+            background-color: white;
+            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+            position: fixed;
+            width: 100%;
+            top: 0;
+            z-index: 1000;
+        }
+        
+        .header-container {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: var(--space-md) 0;
+        }
+        
+        .logo {
+            font-family: 'Montserrat', sans-serif;
+            font-weight: 700;
+            font-size: 1.5rem;
+            color: var(--deep-blue);
+        }
+        
+        .nav-list {
+            display: flex;
+            list-style: none;
+        }
+        
+        .nav-item {
+            margin-left: var(--space-lg);
+        }
+        
+        .nav-link {
+            font-weight: 500;
+            position: relative;
+        }
+        
+        .nav-link:after {
+            content: '';
+            position: absolute;
+            bottom: -5px;
+            left: 0;
+            width: 0;
+            height: 2px;
+            background-color: var(--accent-orange);
+            transition: width 0.2s ease;
+        }
+        
+        .nav-link:hover:after {
+            width: 100%;
+        }
+        
+        .mobile-menu-btn {
+            display: none;
+            background: none;
+            border: none;
+            font-size: 1.5rem;
+            cursor: pointer;
+            color: var(--deep-blue);
+        }
+        
+        /* Hero Section */
+        .hero {
+            height: 100vh;
+            display: flex;
+            align-items: center;
+            background-color: var(--deep-blue);
+            color: white;
+            position: relative;
+            overflow: hidden;
+            margin-top: 70px;
+        }
+        
+        .hero:before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-image: linear-gradient(rgba(26, 54, 93, 0.8), rgba(26, 54, 93, 0.8)), url('../images/C-Ward Expansion Building after.jpg');
+            background-size: cover;
+            background-position: center;
+            z-index: 0;
+        }
+        
+        .hero-content {
+            position: relative;
+            z-index: 1;
+            max-width: 800px;
+        }
+        
+        .hero-title {
+            font-size: 3.5rem;
+            margin-bottom: var(--space-md);
+            line-height: 1.2;
+            color: white;
+        }
+        
+        .hero-subtitle {
+            font-size: 1.5rem;
+            margin-bottom: var(--space-lg);
+            color: var(--light-gray);
+        }
+        
+        .hero-btns {
+            display: flex;
+            gap: var(--space-md);
+        }
+        
+        /* Featured Projects */
+        .projects-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(350px, 1fr));
+            gap: var(--space-lg);
+        }
+        
+        .project-card {
+            background-color: white;
+            border-radius: 8px;
+            overflow: hidden;
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+        
+        .project-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 25px rgba(0, 0, 0, 0.15);
+        }
+        
+        .project-img {
+            width: 100%;
+            height: 250px;
+            object-fit: cover;
+        }
+        
+        .project-content {
+            padding: var(--space-md);
+        }
+        
+        .project-title {
+            font-size: 1.5rem;
+            margin-bottom: var(--space-sm);
+        }
+        
+        .project-desc {
+            margin-bottom: var(--space-md);
+            color: var(--steel-gray);
+        }
+        
+        /* Skills Section */
+        .skills-section {
+            background-color: var(--light-gray);
+        }
+        
+        .skills-container {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+            gap: var(--space-lg);
+        }
+        
+        .skill-category {
+            background-color: white;
+            padding: var(--space-md);
+            border-radius: 8px;
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.05);
+        }
+        
+        .skill-category-title {
+            font-size: 1.25rem;
+            margin-bottom: var(--space-md);
+            color: var(--deep-blue);
+            position: relative;
+            padding-bottom: var(--space-xs);
+        }
+        
+        .skill-category-title:after {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            width: 40px;
+            height: 3px;
+            background-color: var(--accent-orange);
+        }
+        
+        .skill-list {
+            list-style: none;
+        }
+        
+        .skill-item {
+            margin-bottom: var(--space-sm);
+            display: flex;
+            align-items: center;
+        }
+        
+        .skill-item:before {
+            content: '•';
+            color: var(--accent-orange);
+            font-weight: bold;
+            margin-right: var(--space-sm);
+        }
+        
+        /* Contact Section */
+        .contact-section {
+            background-color: var(--deep-blue);
+            color: white;
+        }
+        
+        .contact-title {
+            color: white;
+        }
+        
+        .contact-content {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: var(--space-xl);
+        }
+        
+        .contact-info p {
+            margin-bottom: var(--space-md);
+        }
+        
+        .contact-link {
+            color: var(--sand-beige);
+            transition: color 0.2s ease;
+        }
+        
+        .contact-link:hover {
+            color: var(--accent-orange);
+        }
+        
+        .social-links {
+            display: flex;
+            gap: var(--space-md);
+            margin-top: var(--space-lg);
+        }
+        
+        .social-link {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            width: 40px;
+            height: 40px;
+            background-color: rgba(255, 255, 255, 0.1);
+            border-radius: 50%;
+            transition: background-color 0.2s ease;
+        }
+        
+        .social-link:hover {
+            background-color: var(--accent-orange);
+        }
+        
+        /* Footer */
+        footer {
+            background-color: var(--dark-gray);
+            color: var(--light-gray);
+            padding: var(--space-lg) 0;
+            text-align: center;
+        }
+        
+        .footer-content {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+        
+        .footer-nav {
+            display: flex;
+            gap: var(--space-md);
+            margin-bottom: var(--space-md);
+        }
+        
+        .footer-link {
+            color: var(--light-gray);
+        }
+        
+        .footer-link:hover {
+            color: var(--sand-beige);
+        }
+        
+        .copyright {
+            font-size: 0.875rem;
+        }
+        
+        /* Responsive Styles */
+        @media (max-width: 768px) {
+            h1 {
+                font-size: 2.5rem;
+            }
+            
+            h2 {
+                font-size: 2rem;
+            }
+            
+            .hero-title {
+                font-size: 2.5rem;
+            }
+            
+            .hero-subtitle {
+                font-size: 1.25rem;
+            }
+            
+            .nav-list {
+                display: none;
+            }
+            
+            .mobile-menu-btn {
+                display: block;
+            }
+            
+            .projects-grid {
+                grid-template-columns: 1fr;
+            }
+            
+            .contact-content {
+                grid-template-columns: 1fr;
+                gap: var(--space-lg);
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Header -->
+    <header>
+        <div class="container header-container">
+            <a href="#" class="logo">Mohamed El-Safi</a>
+            <nav>
+                <button class="mobile-menu-btn">☰</button>
+                <ul class="nav-list">
+                    <li class="nav-item"><a href="#" class="nav-link">Home</a></li>
+                    <li class="nav-item"><a href="#about" class="nav-link">About</a></li>
+                    <li class="nav-item"><a href="#projects" class="nav-link">Projects</a></li>
+                    <li class="nav-item"><a href="#skills" class="nav-link">Skills</a></li>
+                    <li class="nav-item"><a href="#experience" class="nav-link">Experience</a></li>
+                    <li class="nav-item"><a href="#contact" class="nav-link">Contact</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <!-- Hero Section -->
+    <section class="hero">
+        <div class="container">
+            <div class="hero-content">
+                <h1 class="hero-title">Mohamed El-Safi</h1>
+                <h2 class="hero-subtitle">Senior Site Engineer with expertise in construction project management</h2>
+                <div class="hero-btns">
+                    <a href="#projects" class="btn">View Projects</a>
+                    <a href="#contact" class="btn btn-accent">Contact Me</a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Featured Projects Section -->
+    <section id="projects" class="section">
+        <div class="container">
+            <h2 class="section-title">Featured Projects</h2>
+            <div class="projects-grid">
+                <div class="project-card">
+                    <img src="../images/C-Ward Expansion Building after.jpg" alt="C-Ward Expansion Project" class="project-img">
+                    <div class="project-content">
+                        <h3 class="project-title">C-Ward Expansion</h3>
+                        <p class="project-desc">Led the structural engineering and site supervision for the C-Ward Expansion project at KFSH&RC, managing all phases from foundation to completion.</p>
+                        <a href="#" class="btn">View Project</a>
+                    </div>
+                </div>
+                <div class="project-card">
+                    <img src="../images/Underground Water Tank Project.jpg" alt="Underground Water Tank Project" class="project-img">
+                    <div class="project-content">
+                        <h3 class="project-title">Underground Water Tank</h3>
+                        <p class="project-desc">Managed the construction of a large-scale underground water tank, overseeing excavation, reinforcement, and concrete pouring operations.</p>
+                        <a href="#" class="btn">View Project</a>
+                    </div>
+                </div>
+                <div class="project-card">
+                    <img src="../images/scene-2 updated.png" alt="Perimeter Fence Project" class="project-img">
+                    <div class="project-content">
+                        <h3 class="project-title">Perimeter Fence Construction</h3>
+                        <p class="project-desc">Designed and implemented a comprehensive perimeter fence project, ensuring security standards while maintaining aesthetic quality.</p>
+                        <a href="#" class="btn">View Project</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Skills Section -->
+    <section id="skills" class="section skills-section">
+        <div class="container">
+            <h2 class="section-title">Technical Expertise</h2>
+            <div class="skills-container">
+                <div class="skill-category">
+                    <h3 class="skill-category-title">Software Proficiency</h3>
+                    <ul class="skill-list">
+                        <li class="skill-item">AutoCAD 2D & 3D Design</li>
+                        <li class="skill-item">Autodesk Revit (Architecture/Structural/MEP)</li>
+                        <li class="skill-item">Bentley Tekla</li>
+                        <li class="skill-item">STAAD.Pro</li>
+                        <li class="skill-item">Robot Structural Analysis</li>
+                    </ul>
+                </div>
+                <div class="skill-category">
+                    <h3 class="skill-category-title">Project Management</h3>
+                    <ul class="skill-list">
+                        <li class="skill-item">Oracle ERP</li>
+                        <li class="skill-item">ACONEX</li>
+                        <li class="skill-item">PRIMAVERA UNIFIER</li>
+                        <li class="skill-item">Microsoft Office Suite</li>
+                        <li class="skill-item">Construction Planning & Scheduling</li>
+                    </ul>
+                </div>
+                <div class="skill-category">
+                    <h3 class="skill-category-title">Engineering Expertise</h3>
+                    <ul class="skill-list">
+                        <li class="skill-item">Structural Engineering</li>
+                        <li class="skill-item">Concrete Construction</li>
+                        <li class="skill-item">Steel Structures</li>
+                        <li class="skill-item">Site Supervision</li>
+                        <li class="skill-item">Quality Assurance</li>
+                    </ul>
+                </div>
+                <div class="skill-category">
+                    <h3 class="skill-category-title">Technical Documentation</h3>
+                    <ul class="skill-list">
+                        <li class="skill-item">Shop Drawings</li>
+                        <li class="skill-item">Quantity Take-offs</li>
+                        <li class="skill-item">Technical Specifications</li>
+                        <li class="skill-item">Progress Reports</li>
+                        <li class="skill-item">Safety Documentation</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section id="contact" class="section contact-section">
+        <div class="container">
+            <h2 class="section-title contact-title">Get In Touch</h2>
+            <div class="contact-content">
+                <div class="contact-info">
+                    <p>I'm always open to discussing new projects, opportunities in construction engineering, or potential collaborations.</p>
+                    <p>Email: <a href="mailto:Moe_Elsafi@Yahoo.com" class="contact-link">Moe_Elsafi@Yahoo.com</a></p>
+                    <p>Phone: <a href="tel:0536960035" class="contact-link">0536960035</a></p>
+                    <p>Location: Riyadh, Saudi Arabia</p>
+                    <div class="social-links">
+                        <a href="https://www.linkedin.com/in/mohamed-el-safi-a1113992/" class="social-link" target="_blank">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="white">
+                                <path d="M19 0h-14c-2.761 0-5 2.239-5 5v14c0 2.761 2.239 5 5 5h14c2.762 0 5-2.239 5-5v-14c0-2.761-2.238-5-5-5zm-11 19h-3v-11h3v11zm-1.5-12.268c-.966 0-1.75-.79-1.75-1.764s.784-1.764 1.75-1.764 1.75.79 1.75 1.764-.783 1.764-1.75 1.764zm13.5 12.268h-3v-5.604c0-3.368-4-3.113-4 0v5.604h-3v-11h3v1.765c1.396-2.586 7-2.777 7 2.476v6.759z"/>
+                            </svg>
+                        </a>
+                    </div>
+                </div>
+                <div class="contact-form">
+                    <!-- Form will be implemented in the actual website -->
+                    <p>A contact form will be implemented here in the final website.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        <div class="container footer-content">
+            <nav class="footer-nav">
+                <a href="#" class="footer-link">Home</a>
+                <a href="#about" class="footer-link">About</a>
+                <a href="#projects" class="footer-link">Projects</a>
+                <a href="#skills" class="footer-link">Skills</a>
+                <a href="#experience" class="footer-link">Experience</a>
+                <a href="#contact" class="footer-link">Contact</a>
+            </nav>
+            <p class="copyright">© 2025 Mohamed El-Safi. All rights reserved.</p>
+        </div>
+    </footer>
+</body>
+</html>

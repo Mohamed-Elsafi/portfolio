@@ -34,6 +34,15 @@ function initNavigation() {
             document.body.style.overflow = '';
         });
     }
+
+    const navLinks = document.querySelectorAll('.mobile-nav .nav-link');
+    navLinks.forEach(link => {
+        link.addEventListener('click', function() {
+            mobileNav.classList.remove('active');
+            overlay.classList.remove('active');
+            document.body.style.overflow = '';
+        });
+    });
     
     if (overlay) {
         overlay.addEventListener('click', function() {

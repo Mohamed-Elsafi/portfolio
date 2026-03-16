@@ -1,300 +1,533 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Mohamed El-Safi | Senior Site Engineer</title>
-    <meta name="description" content="Portfolio of Mohamed El-Safi, a Senior Site Engineer with expertise in construction project management, structural engineering, and technical documentation.">
-    <meta name="keywords" content="civil engineer, site engineer, construction management, structural engineering, project management, Mohamed El-Safi">
-    
-    <!-- Favicon -->
-    <link rel="icon" href="favicon.ico" type="image/x-icon">
-    
-    <!-- Google Fonts -->
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700&family=Roboto:wght@300;400;500;700&family=Roboto+Mono&display=swap" rel="stylesheet">
-    
-    <!-- Main Stylesheet -->
-    <link rel="stylesheet" href="css/styles.css">
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Mohamed El-Safi | Senior Project Engineer | Construction Manager | Riyadh KSA</title>
+  <meta name="description" content="Senior Project Engineer with 10+ years delivering building projects in Saudi Arabia. SAR 1.2B+ program delivery, 100+ inspection closures, healthcare and mega-project environments. View delivery track record and execution methodology.">
+  <meta name="keywords" content="Mohamed El-Safi, Senior Project Engineer, Construction Manager, Riyadh, KSA, Saudi Arabia, civil engineer, building delivery, QA/QC, mega-project, healthcare construction">
+  <link rel="canonical" href="https://mohamed-elsafi.github.io/portfolio/">
+
+  <!-- OpenGraph -->
+  <meta property="og:title" content="Mohamed El-Safi | Senior Project Engineer | Building Delivery">
+  <meta property="og:description" content="10+ years delivering building projects across KSA. SAR 1.2B+ program delivery. View delivery track record.">
+  <meta property="og:image" content="https://mohamed-elsafi.github.io/portfolio/images/Mishraq_City_Slab_Rein__Activity.jpg">
+  <meta property="og:url" content="https://mohamed-elsafi.github.io/portfolio/">
+  <meta property="og:type" content="website">
+
+  <link rel="stylesheet" href="css/styles.css">
 </head>
 <body>
-    <!-- Header -->
-    <header>
-        <div class="container header-container">
-            <a href="#" class="logo">Mohamed El-Safi</a>
-            <nav>
-                <button class="mobile-menu-btn" aria-label="Open menu">☰</button>
-                <ul class="nav-list">
-                    <li class="nav-item"><a href="#home" class="nav-link active">Home</a></li>
-                    <li class="nav-item"><a href="#about" class="nav-link">About</a></li>
-                    <li class="nav-item"><a href="#projects" class="nav-link">Projects</a></li>
-                    <li class="nav-item"><a href="#skills" class="nav-link">Skills</a></li>
-                    <li class="nav-item"><a href="#experience" class="nav-link">Experience</a></li>
-                    <li class="nav-item"><a href="#contact" class="nav-link">Contact</a></li>
-                </ul>
-            </nav>
-        </div>
-    </header>
 
-    <!-- Mobile Navigation -->
-    <div class="mobile-nav">
-        <button class="mobile-nav-close" aria-label="Close menu">✕</button>
-        <ul class="mobile-nav-list">
-            <li class="mobile-nav-item"><a href="#home" class="mobile-nav-link">Home</a></li>
-            <li class="mobile-nav-item"><a href="#about" class="mobile-nav-link">About</a></li>
-            <li class="mobile-nav-item"><a href="#projects" class="mobile-nav-link">Projects</a></li>
-            <li class="mobile-nav-item"><a href="#skills" class="mobile-nav-link">Skills</a></li>
-            <li class="mobile-nav-item"><a href="#experience" class="mobile-nav-link">Experience</a></li>
-            <li class="mobile-nav-item"><a href="#contact" class="mobile-nav-link">Contact</a></li>
-        </ul>
+  <!-- ═══ NAVIGATION ═══ -->
+  <nav class="nav" role="navigation" aria-label="Main navigation">
+    <div class="nav__inner">
+      <a href="#hero" class="nav__logo">Mohamed El-Safi</a>
+      <ul class="nav__desktop">
+        <li><a href="#projects" class="nav__link">Projects</a></li>
+        <li><a href="#delivery-os" class="nav__link">Methodology</a></li>
+        <li><a href="#about" class="nav__link">About</a></li>
+        <li><a href="#skills" class="nav__link">Skills</a></li>
+        <li><a href="#contact" class="nav__link">Contact</a></li>
+      </ul>
+      <button class="menu-toggle" id="menu-toggle" aria-label="Open menu" aria-expanded="false">
+        <span class="menu-toggle__bar"></span>
+        <span class="menu-toggle__bar"></span>
+        <span class="menu-toggle__bar"></span>
+      </button>
     </div>
-    <div class="overlay"></div>
+    <ul class="nav__mobile" id="mobile-menu">
+      <li><a href="#projects" class="nav__link">Projects</a></li>
+      <li><a href="#delivery-os" class="nav__link">Methodology</a></li>
+      <li><a href="#about" class="nav__link">About</a></li>
+      <li><a href="#skills" class="nav__link">Skills</a></li>
+      <li><a href="#contact" class="nav__link">Contact</a></li>
+    </ul>
+  </nav>
 
-    <!-- Hero Section -->
-    <section id="home" class="hero">
-        <div class="container">
-            <div class="hero-content fade-in">
-                <h1 class="hero-title">Mohamed El-Safi</h1>
-                <h2 class="hero-subtitle">Senior Site Engineer with expertise in construction project management</h2>
-                <div class="hero-btns">
-                    <a href="#projects" class="btn">View Projects</a>
-                    <a href="#contact" class="btn btn-accent">Contact Me</a>
-                </div>
-            </div>
+  <main>
+
+    <!-- ═══ SECTION 1: HERO ═══ -->
+    <section id="hero" class="hero">
+      <div class="hero__bg" style="background-image: url('images/Mishraq_City_Slab_Rein__Activity.jpg');"></div>
+      <div class="hero__content">
+        <h1 class="hero__title">Mohamed El-Safi | Senior Project Engineer | Building Delivery</h1>
+        <p class="hero__subtitle">Over a decade of experience directing complex construction projects across Saudi Arabia, encompasses a diverse portfolio, ranging from Royal palaces and governmental healthcare facilities to urban regional mega-projects. My core methodology centers on translating intricate design intent into buildable work packages, firmly anchored by rigorous QA/QC gates and comprehensive, audit-ready documentation.</p>
+        <div class="metrics">
+          <span class="metrics__item">SAR 1.2B+</span>
+          <span class="metrics__item">10+ Years</span>
+          <span class="metrics__item">100+ Inspection Closures</span>
+          <span class="metrics__item">SAR 65M+ Delivered</span>
+          <span class="metrics__item">Healthcare + Mega-Projects</span>
         </div>
+        <a href="#projects" class="btn btn--accent">View Delivery Track Record</a>
+      </div>
     </section>
 
-    <!-- About Section -->
-    <section id="about" class="section about-section">
-        <div class="container">
-            <h2 class="section-title fade-in">About Me</h2>
-            <div class="about-grid">
-                <div class="about-image fade-in">
-                    <img src="images/profile.jpg" alt="Mohamed El-Safi - Senior Site Engineer">
-                </div>
-                <div class="about-content fade-in">
-                    <p>A dedicated Senior Site Engineer with over a decade of experience managing small- and large-scale construction projects. Skilled in overseeing all phases of civil and architectural works, from site mobilization and soil investigation to the construction and finishing concrete and steel structures.</p>
-                    <p>Adept at ensuring adherence to safety standards, conducting pre-engineering activities, and managing the construction lifecycle from start to completion. Expert in technical office tasks, including quantity take-offs, drafting shop drawings, and effective stakeholder communication.</p>
-                    <p>Known for strong problem-solving skills, a hands-on approach, and the ability to thrive in challenging environments. Committed to delivering projects efficiently, maintaining high-quality standards, and building cohesive, motivated teams.</p>
-                    
-                    <div class="about-stats">
-                        <div class="stat-item">
-                            <div class="stat-number">10+</div>
-                            <div class="stat-label">Years Experience</div>
-                        </div>
-                        <div class="stat-item">
-                            <div class="stat-number">20+</div>
-                            <div class="stat-label">Projects Completed</div>
-                        </div>
-                        <div class="stat-item">
-                            <div class="stat-number">5+</div>
-                            <div class="stat-label">Certifications</div>
-                        </div>
-                    </div>
-                </div>
+    <!-- ═══ SECTION 2: PROJECTS ═══ -->
+    <section id="projects" class="section">
+      <div class="container">
+        <h2 class="section__heading fade-in">Delivery Track Record</h2>
+        <div class="card-grid">
+
+          <!-- Case Study 1: Misk City -->
+          <article class="card fade-in">
+            <div class="card__image-wrap">
+              <img src="images/Mishraq_City_Slab_Rein__Activity.jpg" alt="Misk City slab reinforcement activity with cranes and crews on mega-project site" class="card__image" loading="lazy">
             </div>
+            <div class="card__body">
+              <h3 class="card__title">MISK CITY | AL-MISHRAQ</h3>
+              <p class="card__meta">Senior Site Engineer | Jul 2024 – Present</p>
+              <p class="card__value">SAR 1.2B (overall program)</p>
+              <p class="card__excerpt">I contributed to Misk City, a multi-building non-profit campus in Riyadh delivered under demanding fast-track conditions. The development featured overlapping structural and architectural scopes across several zones.</p>
+              <a href="pages/misk-city.html" class="card__link">View Details →</a>
+            </div>
+          </article>
+
+          <!-- Case Study 2: KFSH&RC -->
+          <article class="card fade-in">
+            <div class="card__image-wrap">
+              <img src="images/CWARDPICTURE.jpg" alt="Completed C-Ward Expansion Building with Riyadh stone facade at KFSH&RC" class="card__image" loading="lazy">
+            </div>
+            <div class="card__body">
+              <h3 class="card__title">KFSH&RC HOSPITAL DELIVERY CLUSTER</h3>
+              <p class="card__meta">Project Manager / Lead Civil Engineer | Aug 2021 – Jul 2024</p>
+              <p class="card__value">Approx SAR 33M</p>
+              <p class="card__excerpt">Delivering three parallel scopes within a live, operational hospital required balancing physical progress with strict governance and rigorous approval protocols.</p>
+              <a href="pages/hospital-cluster.html" class="card__link">View Details →</a>
+            </div>
+          </article>
+
+          <!-- Case Study 3: Water Tank -->
+          <article class="card fade-in">
+            <div class="card__image-wrap">
+              <img src="images/Underground_Water_Tank_Project.jpg" alt="Night concrete pour with pump booms over deep excavation for underground water tank" class="card__image" loading="lazy">
+            </div>
+            <div class="card__body">
+              <h3 class="card__title">UNDERGROUND WATER TANK | KFSH&RC</h3>
+              <p class="card__meta">Project Manager / Civil Site Engineer | Apr 2018 – Aug 2021</p>
+              <p class="card__value">SAR 30M</p>
+              <p class="card__excerpt">Delivering a 2,000,000-litre underground water tank on the KFSH&RC campus required a 12-meter deep excavation within a highly constrained, operational hospital environment.</p>
+              <a href="pages/water-tank.html" class="card__link">View Details →</a>
+            </div>
+          </article>
+
+          <!-- Case Study 4: Perimeter Fence -->
+          <article class="card fade-in">
+            <div class="card__image-wrap">
+              <img src="images/scene-2_updated.png" alt="3D design visualization of perimeter fence for KFSH&RC campus" class="card__image" loading="lazy">
+              <span class="card__label">Design Visualization</span>
+            </div>
+            <div class="card__body">
+              <h3 class="card__title">PERIMETER FENCE | KFSH&RC / KFNCCC</h3>
+              <p class="card__meta">Project Manager / Civil Site Engineer | Apr 2018 – Aug 2021</p>
+              <p class="card__value">SAR 2M</p>
+              <p class="card__excerpt">Executing a 3,200-metre perimeter fence at the KFNCCC campus demanded phased construction designed to maintain uninterrupted facility security throughout every stage.</p>
+              <a href="pages/perimeter-fence.html" class="card__link">View Details →</a>
+            </div>
+          </article>
+
         </div>
+      </div>
     </section>
 
-    <!-- Projects Section -->
-    <section id="projects" class="section projects-section">
-        <div class="container">
-            <h2 class="section-title fade-in">Featured Projects</h2>
-            <div class="projects-grid">
-                <div class="project-card fade-in">
-                    <img src="images/C-Ward Expansion Building after.jpg" alt="C-Ward Expansion Project" class="project-img">
-                    <div class="project-content">
-                        <h3 class="project-title">C-Ward Expansion</h3>
-                        <p class="project-desc">Led the structural engineering and site supervision for the C-Ward Expansion project at KFSH&RC, managing all phases from foundation to completion.</p>
-                        <a href="pages/c-ward-expansion.html" class="btn">View Project</a>
-                    </div>
-                </div>
-                <div class="project-card fade-in">
-                    <img src="images/Underground Water Tank Project.jpg" alt="Underground Water Tank Project" class="project-img">
-                    <div class="project-content">
-                        <h3 class="project-title">Underground Water Tank</h3>
-                        <p class="project-desc">Managed the construction of a large-scale underground water tank, overseeing excavation, reinforcement, and concrete pouring operations.</p>
-                        <a href="pages/water-tank.html" class="btn">View Project</a>
-                    </div>
-                </div>
-                <div class="project-card fade-in">
-                    <img src="images/scene-2 updated.png" alt="Perimeter Fence Project" class="project-img">
-                    <div class="project-content">
-                        <h3 class="project-title">Perimeter Fence Construction</h3>
-                        <p class="project-desc">Designed and implemented a comprehensive perimeter fence project, ensuring security standards while maintaining aesthetic quality.</p>
-                        <a href="pages/perimeter-fence.html" class="btn">View Project</a>
-                    </div>
-                </div>
-                <div class="project-card fade-in">
-                    <img src="images/Shop Drawing Sample for C-Ward Expansion MECHANICAL PLANT ROOM_1.jpg" alt="Technical Documentation" class="project-img">
-                    <div class="project-content">
-                        <h3 class="project-title">Technical Documentation</h3>
-                        <p class="project-desc">Showcasing expertise in shop drawings, 3D modeling, and quantity calculations for construction projects.</p>
-                        <a href="pages/technical-documentation.html" class="btn">View Samples</a>
-                    </div>
-                </div>
+    <!-- ═══ SECTION 3: DELIVERY OPERATING SYSTEM ═══ -->
+    <section id="delivery-os" class="section section--surface">
+      <div class="container">
+        <h2 class="section__heading fade-in">Delivery Operating System</h2>
+        <p class="fade-in" style="max-width:800px; margin-bottom:2rem; line-height:1.7;">The distinction between a clean closeout and a trail of rework, claims, and NCRs is not engineering talent; it is the execution system underpinning the engineering. Over a decade of delivering building projects in KSA, a structured operating rhythm has been developed that treats documentation, readiness gates, and coordination as core delivery instruments, not administrative overhead. The subsections below outline the methodology behind site operations. The downloadable artifacts are working templates drawn from this framework.</p>
+
+        <!-- Illustration -->
+        <img src="images/ProgressTrackingTableexportedfromExcel_001.jpg" alt="Color-coded progress and procurement tracking spreadsheet showing submittal status with completion percentages" class="dos-illustration fade-in" loading="lazy">
+
+        <!-- Accordion 1: Daily Execution Rhythm -->
+        <div class="accordion__item fade-in">
+          <div class="accordion__header">
+            <div>
+              <div class="accordion__title">1. Daily Execution Rhythm</div>
+              <div class="accordion__preview">The daily execution loop follows a three-phase cycle engineered to prevent surprises, capture progress, and produce evidence that supports informed decision-making.</div>
             </div>
+            <svg class="accordion__icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="6 9 12 15 18 9"></polyline></svg>
+          </div>
+          <div class="accordion__content">
+            <div class="accordion__body">
+              <p><strong>Start-of-day:</strong> Confirm that approved drawings and method statements are in hand. Verify access, permits, manpower, and materials are in place prior to releasing crews to active work areas.</p>
+              <p><strong>During the day:</strong> Supervise critical activities and resolve constraints as they surface. Coordinate interfaces between disciplines (MEP, structural, and architectural). Pre-check quality ahead of formal inspections; consultant inspections should only be requested when the work is fully inspection-ready.</p>
+              <p><strong>End-of-day:</strong> Capture measurable progress including quantities installed, zones completed, and photographic evidence. Record any delays or constraints with documented root causes. Finalize the next-day execution plan so the cycle restarts without ambiguity.</p>
+              <p><a href="artifacts/DSR-Template.xlsx" class="btn btn--outline btn--small" download>Download DSR Template (.xlsx)</a></p>
+            </div>
+          </div>
         </div>
+
+        <!-- Accordion 2: Documentation as a Delivery Tool -->
+        <div class="accordion__item fade-in">
+          <div class="accordion__header">
+            <div>
+              <div class="accordion__title">2. Documentation as a Delivery Tool</div>
+              <div class="accordion__preview">Documentation functions as the mechanism that converts field activity into decision-grade evidence, not a back-office task.</div>
+            </div>
+            <svg class="accordion__icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="6 9 12 15 18 9"></polyline></svg>
+          </div>
+          <div class="accordion__content">
+            <div class="accordion__body">
+              <p>Documentation functions as the mechanism that converts field activity into decision-grade evidence. Every inspection request, material approval, and site instruction is logged with a traceable reference. The Daily Site Report captures quantitative progress, not narrative summaries.</p>
+              <p>Material Inspection Requests (MIRs) are supported by comprehensive evidence packs: approved submittals, delivery notes, batch certificates, compliance data sheets, and storage verification, all assembled before the request is raised, never gathered afterward. Work Inspection Requests follow the same gate logic: approved drawings, approved method statements, calibrated instruments, pre-inspection checklists, and photographic evidence compiled prior to calling the consultant. This front-loaded approach reduces inspection failures and compresses approval cycles.</p>
+              <p><a href="artifacts/MIR-Evidence-Pack-Index.xlsx" class="btn btn--outline btn--small" download>Download MIR Evidence Pack Index (.xlsx)</a></p>
+            </div>
+          </div>
+        </div>
+
+        <!-- Accordion 3: Drawing Control & Revision Management -->
+        <div class="accordion__item fade-in">
+          <div class="accordion__header">
+            <div>
+              <div class="accordion__title">3. Drawing Control & Revision Management</div>
+              <div class="accordion__preview">Rework caused by outdated drawings is entirely preventable.</div>
+            </div>
+            <svg class="accordion__icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="6 9 12 15 18 9"></polyline></svg>
+          </div>
+          <div class="accordion__content">
+            <div class="accordion__body">
+              <p>Rework caused by outdated drawings is entirely preventable. Treating the "latest approved drawing" as a controlled asset requires a maintained drawing register that tracks revision numbers, issue dates, distribution logs, and confirms that superseded drawings have been physically removed from active work areas. Drawing types are clearly distinguished (Tender, IFC, Shop, As-Built) ensuring every team member identifies which drawing governs the current activity.</p>
+              <p>Upon arrival of revisions, the established process is: verify what changed, identify all parties requiring notification (site teams, subcontractors, QC, survey), and log the distribution before releasing crews to updated scope.</p>
+              <p><a href="artifacts/Drawing-Register-Revision-Control.xlsx" class="btn btn--outline btn--small" download>Download Drawing Register & Revision Control Log (.xlsx)</a></p>
+            </div>
+          </div>
+        </div>
+
+        <!-- Accordion 4: Clearance-Before-Execution Workflow -->
+        <div class="accordion__item fade-in">
+          <div class="accordion__header">
+            <div>
+              <div class="accordion__title">4. Clearance-Before-Execution Workflow</div>
+              <div class="accordion__preview">The most common source of hidden cost on construction sites is commencing work before all clearances are in place.</div>
+            </div>
+            <svg class="accordion__icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="6 9 12 15 18 9"></polyline></svg>
+          </div>
+          <div class="accordion__content">
+            <div class="accordion__body">
+              <p>The most common source of hidden cost on construction sites is commencing work before all clearances are in place. A standard gate sequence is enforced: drawings approved → materials approved → method statement and ITP approved → workfront access confirmed → MEP clearance obtained (where interfaces exist) → safety permit issued. Execution begins only after every gate registers green.</p>
+              <p>This discipline prevents the cascade of rework, abortive work, and NCRs that characterizes "start now, sort it out later" cultures. On the KFSH&RC projects, the clearance workflow proved particularly critical, as work could not proceed without coordinated access windows, hospital operations clearance, and security approvals alongside the standard technical gates.</p>
+              <p><a href="artifacts/Workfront-Clearance-Checklist.xlsx" class="btn btn--outline btn--small" download>Download Workfront Clearance Checklist (.xlsx)</a></p>
+            </div>
+          </div>
+        </div>
+
+        <!-- Accordion 5: QC Pre-Emption Framework -->
+        <div class="accordion__item fade-in">
+          <div class="accordion__header">
+            <div>
+              <div class="accordion__title">5. QC Pre-Emption Framework</div>
+              <div class="accordion__preview">The QC Pre-Emption Framework transforms site quality management from reactive paperwork into a proactive, field-ready methodology engineered for Tier-1 Saudi mega-projects.</div>
+            </div>
+            <svg class="accordion__icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="6 9 12 15 18 9"></polyline></svg>
+          </div>
+          <div class="accordion__content">
+            <div class="accordion__body">
+              <p>The QC Pre-Emption Framework transforms site quality management from reactive paperwork into a proactive, field-ready methodology engineered for Tier-1 Saudi mega-projects. To eliminate redundancy and ensure digital scalability, the system relies on Discipline, Inspection Category, and Individual Check Items that mirrors standard Work Breakdown Structures (WBS).</p>
+              <p>Execution is strictly tailored by discipline to maximize operational efficiency and maintain clear jurisdictional boundaries. Structural and architectural domains undergo rigorous, phase-sequenced direct field inspections, utilizing Hold, Witness, and Review points for critical tasks like concrete pours, structural steel erection, and architectural finishes. This field execution is governed by a robust Quality Assurance layer driven by the continuous improvement PDCA (Plan-Do-Check-Act) cycle, ensuring standardized procedures, targeted training, regular audits, and immediate corrective actions for non-conformances.</p>
+              <p>Construction performance is continuously monitored through quantifiable Key Performance Indicators (KPIs), including First-Time Pass Rates, Non-Conformance Report (NCR) resolution ratios, and Rework Cost Percentages. Ultimately, this digital, closed-loop mechanism preempts architectural and structural defects, accelerates inspection turnarounds, and guarantees verifiable structural integrity across massive construction scopes.</p>
+              <p><a href="artifacts/Structural-QC-Pre-Emption-Framework.xlsx" class="btn btn--outline btn--small" download>Download Structural QC Pre-Emption Framework (.xlsx)</a></p>
+            </div>
+          </div>
+        </div>
+
+        <!-- Accordion 6: Safety Ownership Model -->
+        <div class="accordion__item fade-in">
+          <div class="accordion__header">
+            <div>
+              <div class="accordion__title">6. Safety Ownership Model</div>
+              <div class="accordion__preview">Safety is not delegated to the HSE department; it begins with the site engineer who sequences work, controls access, and releases crews.</div>
+            </div>
+            <svg class="accordion__icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="6 9 12 15 18 9"></polyline></svg>
+          </div>
+          <div class="accordion__content">
+            <div class="accordion__body">
+              <p>Safety is not delegated to the HSE department; it begins with the site engineer who sequences work, controls access, and releases crews. Safety is treated as an execution constraint: safe sequencing of activities, controlled access to active workfronts, housekeeping standards maintained between shifts, and permits obtained before any high-risk activity including excavation, lifting, hot works, or confined spaces.</p>
+              <p>Pre-task briefings are conducted before critical activities to ensure every crew member understands the hazards, controls, and emergency procedures specific to that day's work. On the underground water tank project, this translated to daily verification of excavation shoring, controlled access to the 12-metre deep excavation, and lifting plans for every crane operation within the confined site footprint.</p>
+              <p><a href="artifacts/HSE-PreTask-Briefing-Card.xlsx" class="btn btn--outline btn--small" download>Download HSE Pre-Task Briefing Card (.xlsx)</a></p>
+            </div>
+          </div>
+        </div>
+
+        <!-- Accordion 7: AI-Assisted Reporting -->
+        <div class="accordion__item fade-in">
+          <div class="accordion__header">
+            <div>
+              <div class="accordion__title">7. AI-Assisted Reporting</div>
+              <div class="accordion__preview">Active development of AI-assisted reporting tools is underway to auto-draft structured Daily Site Reports from site photos and progress notes.</div>
+            </div>
+            <svg class="accordion__icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="6 9 12 15 18 9"></polyline></svg>
+          </div>
+          <div class="accordion__content">
+            <div class="accordion__body">
+              <p>Active development of AI-assisted reporting tools is underway to auto-draft structured Daily Site Reports from site photos and progress notes, transforming a 45-minute reporting task into a 10-minute review. The approach applies the same documentation discipline described above, leveraging AI to handle formatting, structure, and consistency checks, freeing site engineers to focus on content: what happened, what is blocked, and what needs to happen tomorrow.</p>
+              <p>This is not a replacement for engineering judgment; it is an efficiency layer that ensures reports are timely, complete, and consistently structured even on the busiest days. The same logic extends to pre-inspection checklists (auto-populated from ITP hold points) and constraint logs (flagging missing approvals based on the clearance workflow).</p>
+              <p>AI is treated as a delivery tool in the same manner as documentation: it reduces variability and improves decision speed.</p>
+            </div>
+          </div>
+        </div>
+
+      </div>
     </section>
 
-    <!-- Skills Section -->
-    <section id="skills" class="section skills-section">
-        <div class="container">
-            <h2 class="section-title fade-in">Technical Expertise</h2>
-            <div class="skills-container">
-                <div class="skill-category fade-in">
-                    <h3 class="skill-category-title">Software Proficiency</h3>
-                    <ul class="skill-list">
-                        <li class="skill-item">AutoCAD 2D & 3D Design</li>
-                        <li class="skill-item">Autodesk Revit (Architecture/Structural/MEP)</li>
-                        <li class="skill-item">Bentley Tekla</li>
-                        <li class="skill-item">STAAD.Pro</li>
-                        <li class="skill-item">Robot Structural Analysis</li>
-                    </ul>
-                </div>
-                <div class="skill-category fade-in">
-                    <h3 class="skill-category-title">Project Management</h3>
-                    <ul class="skill-list">
-                        <li class="skill-item">Oracle ERP</li>
-                        <li class="skill-item">ACONEX</li>
-                        <li class="skill-item">PRIMAVERA UNIFIER</li>
-                        <li class="skill-item">Microsoft Office Suite</li>
-                        <li class="skill-item">Construction Planning & Scheduling</li>
-                    </ul>
-                </div>
-                <div class="skill-category fade-in">
-                    <h3 class="skill-category-title">Engineering Expertise</h3>
-                    <ul class="skill-list">
-                        <li class="skill-item">Structural Engineering</li>
-                        <li class="skill-item">Concrete Construction</li>
-                        <li class="skill-item">Steel Structures</li>
-                        <li class="skill-item">Site Supervision</li>
-                        <li class="skill-item">Quality Assurance</li>
-                    </ul>
-                </div>
-                <div class="skill-category fade-in">
-                    <h3 class="skill-category-title">Technical Documentation</h3>
-                    <ul class="skill-list">
-                        <li class="skill-item">Shop Drawings</li>
-                        <li class="skill-item">Quantity Take-offs</li>
-                        <li class="skill-item">Technical Specifications</li>
-                        <li class="skill-item">Progress Reports</li>
-                        <li class="skill-item">Safety Documentation</li>
-                    </ul>
-                </div>
-            </div>
+    <!-- ═══ SECTION 4: ABOUT ═══ -->
+    <section id="about" class="section">
+      <div class="container">
+        <h2 class="section__heading fade-in">About</h2>
+        <div class="about__narrative fade-in">
+          <p>Arriving in Saudi Arabia in 2015 marked the beginning of a career built on execution discipline. Initial years were spent delivering high-profile residential and royal projects in Riyadh, including royal palaces and private villas, where demanding finishing standards and strict stakeholder expectations established the foundation for rigorous quality control. Operating within small-team environments without full internal systems necessitated carrying broad responsibility early: site execution, coordination with the main contractor, measurement, payment documentation, and quality assurance. The lesson from that formative period proved enduring: even technically perfect work is commercially invisible without signed documentation. Evidence protects time, money, and trust.</p>
+          <p>From 2018 to 2024, multiple projects were delivered at King Faisal Specialist Hospital & Research Centre (KFSH&RC), a live, operational hospital where governance, approvals, and closeout evidence carry the same weight as physical progress. This period encompassed an underground water tank (SAR 30M, 12m deep excavation, 9,850 m³ concrete, 210 tons steel), a 3,200m perimeter fence, and subsequently the C-Ward Expansion Building (SAR 20M, 200 tons structural steel), a Fire-Rated Doors Retrofit, and a Protocol Office Conversion, approximately SAR 33M in combined delivery. Working inside a functioning hospital reinforced that constraints planning surpasses manpower planning, that phased turnover builds stakeholder trust, and that documentation is protection.</p>
+          <p>Currently operating within a fast-track mega-project environment in Riyadh, Misk City (Al-Mishraq), a SAR 1.2B non-profit campus program, responsibilities include managing multi-zone execution across structural and architectural scopes, coordinating interfaces between site managers and subcontractor crews, and utilizing BIM-enabled coordination alongside Oracle Aconex and Primavera Unifier for audit-ready reporting. Concurrently, AI tools are being integrated into construction documentation workflows, developing methods to auto-draft structured site reports and pre-populate inspection checklists, treating technology as a delivery advantage, not a separate discipline.</p>
         </div>
+
+        <div class="about__callout fade-in">
+          <div class="about__callout-label">Management Style</div>
+          <p>Leadership is exercised through clarity and structured gates: defining buildable work packages, setting inspection readiness standards, assigning owners, and tracking evidence until closure. Technical support is provided when team members encounter obstacles, while maintaining high but practical standards: quality, safety, and productivity are measurable routines, not slogans.</p>
+        </div>
+
+        <blockquote class="about__quote fade-in">Optimal performance is achieved in environments where decisions are documented, responsibilities are clear, and quality operates as an operational routine, not a poster on the wall.</blockquote>
+      </div>
     </section>
 
-    <!-- Experience Section -->
-    <section id="experience" class="section experience-section">
-        <div class="container">
-            <h2 class="section-title fade-in">Professional Experience</h2>
-            <div class="timeline">
-                <div class="timeline-item fade-in">
-                    <div class="timeline-content">
-                        <div class="timeline-date">2024</div>
-                        <h3 class="timeline-title">Senior Site Engineer</h3>
-                        <h4 class="timeline-subtitle">Saudi Constructioneers Co.</h4>
-                        <p>Overseeing construction activities at Misk City, Al-Mishraq Project, including masonry, steel reinforcement, and backfilling operations. Ensuring adherence to quality and safety standards.</p>
-                    </div>
-                </div>
-                <div class="timeline-item fade-in">
-                    <div class="timeline-content">
-                        <div class="timeline-date">2021</div>
-                        <h3 class="timeline-title">Project Manager/Lead Civil Engineer</h3>
-                        <h4 class="timeline-subtitle">ALHADA Contracting Company Ltd</h4>
-                        <p>Managed the C-WARD EXPANSION BUILDING and Fire-Rated Doors projects at KFSH&RC EPMD. Specialized in structural engineering with focus on steel structures using STAAD-Pro for analysis and design.</p>
-                    </div>
-                </div>
-                <div class="timeline-item fade-in">
-                    <div class="timeline-content">
-                        <div class="timeline-date">2018</div>
-                        <h3 class="timeline-title">Project Manager/Civil Engineer</h3>
-                        <h4 class="timeline-subtitle">K-Al-Hussein Cont. Est.</h4>
-                        <p>Led Underground Water Tank Construction and Perimeter Fence Construction projects at KFSH&RC and KFNCCC. Drafted technical documents, calculated costs, and supervised workforce and vendors.</p>
-                    </div>
-                </div>
-                <div class="timeline-item fade-in">
-                    <div class="timeline-content">
-                        <div class="timeline-date">2016</div>
-                        <h3 class="timeline-title">Civil Site Engineer</h3>
-                        <h4 class="timeline-subtitle">Advanced Finishing Est.</h4>
-                        <p>Implemented civil works at Oujeh Royal Palace, Mustazilla Royal Palace, and Residential Private Villas. Managed site resources and applied technical knowledge for structural, architectural, and civil works.</p>
-                    </div>
-                </div>
+    <!-- ═══ SECTION 5: SKILLS ═══ -->
+    <section id="skills" class="section section--surface">
+      <div class="container">
+        <h2 class="section__heading fade-in">Skills & Competencies</h2>
+
+        <!-- Core Strengths -->
+        <div class="skills__tier fade-in">
+          <h3 class="skills__tier-title">Core Strengths</h3>
+
+          <div class="skill-item">
+            <span class="skill__dot skill__dot--strong"></span>
+            <div>
+              <div class="skill__name">Site Execution Leadership (Civil / Structural / Architectural)</div>
+              <div class="skill__evidence">Over a decade of multi-zone leadership across live hospital and mega-project environments. Demonstrated workfront control, sequencing discipline, and systematic closure management.</div>
             </div>
+          </div>
+
+          <div class="skill-item">
+            <span class="skill__dot skill__dot--strong"></span>
+            <div>
+              <div class="skill__name">QA/QC Systems: ITP, MIR, WIR Readiness</div>
+              <div class="skill__evidence">100+ inspection closures across hospital and mega-project sites. Quality control operated through structured gates and pre-checks, not reactive inspection chasing.</div>
+            </div>
+          </div>
+
+          <div class="skill-item">
+            <span class="skill__dot skill__dot--strong"></span>
+            <div>
+              <div class="skill__name">Interface Management (Civil / Arch / MEP)</div>
+              <div class="skill__evidence">Multi-discipline coordination leveraging RFIs, TQs, BIM viewpoints, and evidence-based communication. Most effective when governance supports structured handoffs.</div>
+            </div>
+          </div>
+
+          <div class="skill-item">
+            <span class="skill__dot skill__dot--strong"></span>
+            <div>
+              <div class="skill__name">Constructability & Field Engineering</div>
+              <div class="skill__evidence">On-site problem-solving across complex scopes. Core strength in preventing rework through early detection of clashes, sequencing conflicts, and design-versus-buildability gaps.</div>
+            </div>
+          </div>
+
+          <div class="skill-item">
+            <span class="skill__dot skill__dot--strong"></span>
+            <div>
+              <div class="skill__name">Quantity Take-Offs & Measurement</div>
+              <div class="skill__evidence">Consistent strength across all roles. BOQ preparation, measurement logic, reconciliation, and payment certificate support.</div>
+            </div>
+          </div>
+
+          <div class="skill-item">
+            <span class="skill__dot skill__dot--strong"></span>
+            <div>
+              <div class="skill__name">Document Control & Systems (Aconex / Unifier / ERP)</div>
+              <div class="skill__evidence">Oracle Aconex, Primavera Unifier, and ERP-based activity logging deployed across hospital and mega-project environments. Documentation constitutes a core professional advantage.</div>
+            </div>
+          </div>
+
+          <div class="skill-item">
+            <span class="skill__dot skill__dot--strong"></span>
+            <div>
+              <div class="skill__name">Shop Drawing Review / Redlines / Revision Control</div>
+              <div class="skill__evidence">Proficient at converting design intent into buildable packages through markups, redlines, and controlled revision distribution.</div>
+            </div>
+          </div>
+
+          <div class="skill-item">
+            <span class="skill__dot skill__dot--strong"></span>
+            <div>
+              <div class="skill__name">Method Statements & Work Packaging</div>
+              <div class="skill__evidence">MS/ITP routines anchored across hospital compliance and mega-project execution. Progressing toward writing method statements as production manuals with embedded checkpoints.</div>
+            </div>
+          </div>
+
+          <div class="skill-item">
+            <span class="skill__dot skill__dot--strong"></span>
+            <div>
+              <div class="skill__name">Workfront Planning & Sequencing (Daily / Weekly)</div>
+              <div class="skill__evidence">Area ownership under shifting priorities. Closure of stalled workfronts through constraint identification, resolution sequencing, and evidence-based escalation.</div>
+            </div>
+          </div>
+
+          <div class="skill-item">
+            <span class="skill__dot skill__dot--strong"></span>
+            <div>
+              <div class="skill__name">Progress Reporting & Dashboards (Excel)</div>
+              <div class="skill__evidence">Weekly and monthly dashboards, progress trackers with color-coded status systems, and cycle-time monitoring. Designed to support decision-making, not merely filing.</div>
+            </div>
+          </div>
+
+          <div class="skill-item">
+            <span class="skill__dot skill__dot--strong"></span>
+            <div>
+              <div class="skill__name">People Leadership (Engineers / Foremen / Subcontractors)</div>
+              <div class="skill__evidence">Led teams ranging from 10 to 100+ personnel. Clear expectations, technical support when blocked, and high but practical standards for quality and safety.</div>
+            </div>
+          </div>
+
+          <div class="skill-item">
+            <span class="skill__dot skill__dot--strong"></span>
+            <div>
+              <div class="skill__name">Stakeholder Coordination (Client / Consultant / Authorities)</div>
+              <div class="skill__evidence">Extensive experience in live hospital and approvals-intensive environments. Evidence-based communication and options-driven escalation.</div>
+            </div>
+          </div>
         </div>
+
+        <!-- Active Growth -->
+        <div class="skills__tier fade-in">
+          <h3 class="skills__tier-title">Active Growth Areas</h3>
+
+          <div class="skill-item">
+            <span class="skill__dot skill__dot--moderate"></span>
+            <div>
+              <div class="skill__name">Look-Ahead Planning (2–4 Weeks) & Constraints Removal</div>
+              <div class="skill__evidence">Hospital constraints planning experience and execution planning across roles. Currently formalizing a structured constraints log with time-boxed escalation protocols.</div>
+            </div>
+          </div>
+
+          <div class="skill-item">
+            <span class="skill__dot skill__dot--moderate"></span>
+            <div>
+              <div class="skill__name">Schedule Language (P6 / Critical Path Influence)</div>
+              <div class="skill__evidence">Worked with look-aheads and planning integration. Strengthening float analysis, constraints impact assessment, and critical chain influence on execution decisions.</div>
+            </div>
+          </div>
+
+          <div class="skill-item">
+            <span class="skill__dot skill__dot--moderate"></span>
+            <div>
+              <div class="skill__name">NCR Handling & Corrective Actions</div>
+              <div class="skill__evidence">NCR experience across delivery environments. Strengthening root-cause trend analysis and prevention controls to eliminate repeat non-conformances.</div>
+            </div>
+          </div>
+
+          <div class="skill-item">
+            <span class="skill__dot skill__dot--moderate"></span>
+            <div>
+              <div class="skill__name">Variation / Extra Works Pricing</div>
+              <div class="skill__evidence">Priced extra items and BOQ variations across roles. Strengthening formal variation workflows with evidence packs and structured substantiation.</div>
+            </div>
+          </div>
+
+          <div class="skill-item">
+            <span class="skill__dot skill__dot--moderate"></span>
+            <div>
+              <div class="skill__name">Progress Valuation / Payment Support</div>
+              <div class="skill__evidence">Monthly payment certificates and supporting documentation. Effective when BOQ is clear; strengthening substantiation workflows for complex claims.</div>
+            </div>
+          </div>
+
+          <div class="skill-item">
+            <span class="skill__dot skill__dot--moderate"></span>
+            <div>
+              <div class="skill__name">Revit (Model Reading / Coordination)</div>
+              <div class="skill__evidence">Utilized for coordination and viewpoint-based clash resolution. Functions as coordinator and model consumer, not a full-time BIM modeler; an honest distinction.</div>
+            </div>
+          </div>
+
+          <div class="skill-item">
+            <span class="skill__dot skill__dot--moderate"></span>
+            <div>
+              <div class="skill__name">Navisworks (Clash Viewpoints)</div>
+              <div class="skill__evidence">Applied for interface resolution and saved viewpoints. Expanding into systematic viewpoint-to-RFI linking workflows.</div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Supporting -->
+        <div class="skills__tier fade-in">
+          <h3 class="skills__tier-title">Supporting Capabilities</h3>
+
+          <div class="skill-item">
+            <span class="skill__dot skill__dot--supporting"></span>
+            <div>
+              <div class="skill__name">AutoCAD (2D & 3D)</div>
+              <div class="skill__evidence">Strong capability. Utilized for coordination, markups, shop drawing control, and as-built preparation across all roles.</div>
+            </div>
+          </div>
+
+          <div class="skill-item">
+            <span class="skill__dot skill__dot--supporting"></span>
+            <div>
+              <div class="skill__name">Tekla Structures</div>
+              <div class="skill__evidence">Applied for 3D structural steel modeling and documentation on the C-Ward project. Effective as a coordination tool; depth is project-specific rather than full-time modeling.</div>
+            </div>
+          </div>
+
+          <div class="skill-item">
+            <span class="skill__dot skill__dot--supporting"></span>
+            <div>
+              <div class="skill__name">STAAD.Pro / Robot Structural Analysis</div>
+              <div class="skill__evidence">Listed capability with some project exposure. Honest assessment: recency is limited. Positioned as review and coordination capability, not current production use.</div>
+            </div>
+          </div>
+
+          <div class="skill-item">
+            <span class="skill__dot skill__dot--supporting"></span>
+            <div>
+              <div class="skill__name">PMP Certification</div>
+              <div class="skill__evidence">Not yet certified. Planned to formalize governance language, stakeholder management, and structured escalation. The principles have been applied in delivery across multiple projects; the methodology section of this portfolio serves as evidence.</div>
+            </div>
+          </div>
+        </div>
+
+      </div>
     </section>
 
-    <!-- Contact Section -->
-    <section id="contact" class="section contact-section">
-        <div class="container">
-            <h2 class="section-title contact-title fade-in">Get In Touch</h2>
-            <div class="contact-content">
-                <div class="contact-info fade-in">
-                    <p>I'm always open to discussing new projects, opportunities in construction engineering, or potential collaborations.</p>
-                    <p>Email: <a href="mailto:Moe_Elsafi@Yahoo.com" class="contact-link">Moe_Elsafi@Yahoo.com</a></p>
-                    <p>Phone: <a href="tel:0536960035" class="contact-link">0536960035</a></p>
-                    <p>Location: Riyadh, Saudi Arabia</p>
-                    <div class="social-links">
-                        <a href="https://www.linkedin.com/in/mohamed-el-safi-a1113992/" class="social-link" target="_blank" aria-label="LinkedIn Profile">
-                            <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="white">
-                                <path d="M19 0h-14c-2.761 0-5 2.239-5 5v14c0 2.761 2.239 5 5 5h14c2.762 0 5-2.239 5-5v-14c0-2.761-2.238-5-5-5zm-11 19h-3v-11h3v11zm-1.5-12.268c-.966 0-1.75-.79-1.75-1.764s.784-1.764 1.75-1.764 1.75.79 1.75 1.764-.783 1.764-1.75 1.764zm13.5 12.268h-3v-5.604c0-3.368-4-3.113-4 0v5.604h-3v-11h3v1.765c1.396-2.586 7-2.777 7 2.476v6.759z"/>
-                            </svg>
-                        </a>
-                    </div>
-                </div>
-                <div class="contact-form fade-in">
-                    <form action="#" method="POST" id="contactForm">
-                        <div class="form-group">
-                            <label for="name" class="form-label">Name</label>
-                            <input type="text" id="name" name="name" class="form-control" placeholder="Your Name" required>
-                        </div>
-                        <div class="form-group">
-                            <label for="email" class="form-label">Email</label>
-                            <input type="email" id="email" name="email" class="form-control" placeholder="Your Email" required>
-                        </div>
-                        <div class="form-group">
-                            <label for="subject" class="form-label">Subject</label>
-                            <input type="text" id="subject" name="subject" class="form-control" placeholder="Subject">
-                        </div>
-                        <div class="form-group">
-                            <label for="message" class="form-label">Message</label>
-                            <textarea id="message" name="message" class="form-control" placeholder="Your Message" required></textarea>
-                        </div>
-                        <button type="submit" class="btn btn-accent">Send Message</button>
-                    </form>
-                </div>
-            </div>
+    <!-- ═══ SECTION 6: CONTACT ═══ -->
+    <section id="contact" class="section section--dark">
+      <div class="container">
+        <h2 class="section__heading fade-in" style="color:#fff;">Get in Touch</h2>
+        <div class="contact__content fade-in">
+          <p class="contact__intro">Availability extends to Senior Project Engineer and Construction Manager opportunities across KSA. For organizations building programs that demand delivery discipline, governance maturity, and audit-ready documentation, a conversation is welcomed.</p>
+          <div class="contact__links">
+            <a href="mailto:Moe_Elsafi@Yahoo.com" class="contact__link">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="2" y="4" width="20" height="16" rx="2"/><path d="m2 7 10 7 10-7"/></svg>
+              Moe_Elsafi@Yahoo.com
+            </a>
+            <a href="https://linkedin.com/in/mohamed-el-safi" target="_blank" rel="noopener noreferrer" class="contact__link">
+              <svg viewBox="0 0 24 24" fill="currentColor"><path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433a2.062 2.062 0 0 1-2.063-2.065 2.064 2.064 0 1 1 2.063 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z"/></svg>
+              LinkedIn Profile
+            </a>
+          </div>
+          <p class="contact__location">Riyadh, Saudi Arabia</p>
+          <p class="contact__availability">Open to Senior Project Engineer and Construction Manager opportunities in KSA</p>
         </div>
+      </div>
     </section>
 
-    <!-- Footer -->
-    <footer>
-        <div class="container footer-content">
-            <nav class="footer-nav">
-                <a href="#home" class="footer-link">Home</a>
-                <a href="#about" class="footer-link">About</a>
-                <a href="#projects" class="footer-link">Projects</a>
-                <a href="#skills" class="footer-link">Skills</a>
-                <a href="#experience" class="footer-link">Experience</a>
-                <a href="#contact" class="footer-link">Contact</a>
-            </nav>
-            <p class="copyright">© 2025 Mohamed El-Safi. All rights reserved.</p>
-        </div>
-    </footer>
+  </main>
 
-    <!-- Back to Top Button -->
-    <a href="#" class="back-to-top" aria-label="Back to top">
-        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-            <polyline points="18 15 12 9 6 15"></polyline>
-        </svg>
-    </a>
+  <!-- ═══ FOOTER ═══ -->
+  <footer class="footer">
+    <div class="container">
+      <p>&copy; 2026 Mohamed El-Safi &nbsp;·&nbsp; <a href="https://linkedin.com/in/mohamed-el-safi" target="_blank" rel="noopener noreferrer">LinkedIn</a></p>
+    </div>
+  </footer>
 
-    <!-- Main JavaScript -->
-    <script src="js/main.js"></script>
+  <script src="js/main.js"></script>
 </body>
 </html>
-

@@ -1,245 +1,132 @@
-// Main JavaScript for Mohamed El-Safi's Portfolio Website
+/* ─── PORTFOLIO — main.js ─── */
+/* Mobile menu, smooth scroll, accordion, scroll-fade, active nav */
 
-document.addEventListener('DOMContentLoaded', function() {
-    // Initialize all components
-    initNavigation();
-    initScrollAnimations();
-    initBeforeAfterSlider();
-    initBackToTop();
-    initContactForm();
-    initSkillBars();
-});
+(function () {
+  'use strict';
 
-// Navigation functionality
-function initNavigation() {
-    const mobileMenuBtn = document.querySelector('.mobile-menu-btn');
-    const mobileNav = document.querySelector('.mobile-nav');
-    const mobileNavClose = document.querySelector('.mobile-nav-close');
-    const overlay = document.querySelector('.overlay');
-    const header = document.querySelector('header');
-    
-    // Mobile menu toggle
-    if (mobileMenuBtn) {
-        mobileMenuBtn.addEventListener('click', function() {
-            mobileNav.classList.add('active');
-            overlay.classList.add('active');
-            document.body.style.overflow = 'hidden';
+  /* ── Mobile Hamburger Menu ── */
+  const menuToggle = document.getElementById('menu-toggle');
+  const mobileMenu = document.getElementById('mobile-menu');
+
+  if (menuToggle && mobileMenu) {
+    menuToggle.addEventListener('click', function () {
+      const expanded = menuToggle.getAttribute('aria-expanded') === 'true';
+      menuToggle.setAttribute('aria-expanded', !expanded);
+      mobileMenu.classList.toggle('nav__mobile--open');
+      // Toggle hamburger icon to X
+      menuToggle.classList.toggle('menu-toggle--active');
+    });
+
+    // Close mobile menu when a link is clicked
+    mobileMenu.querySelectorAll('a').forEach(function (link) {
+      link.addEventListener('click', function () {
+        mobileMenu.classList.remove('nav__mobile--open');
+        menuToggle.setAttribute('aria-expanded', 'false');
+        menuToggle.classList.remove('menu-toggle--active');
+      });
+    });
+  }
+
+  /* ── Smooth Scroll for Anchor Links ── */
+  document.querySelectorAll('a[href*="#"]').forEach(function (anchor) {
+    anchor.addEventListener('click', function (e) {
+      var href = this.getAttribute('href');
+      // Only handle same-page anchors
+      var hashIndex = href.indexOf('#');
+      if (hashIndex === -1) return;
+      var hash = href.substring(hashIndex);
+      var target = document.querySelector(hash);
+      if (!target) return;
+
+      // If it's a link like ../index.html#projects, let the browser navigate
+      var beforeHash = href.substring(0, hashIndex);
+      if (beforeHash && !beforeHash.endsWith(window.location.pathname)) return;
+
+      e.preventDefault();
+      var navHeight = document.querySelector('.nav') ? document.querySelector('.nav').offsetHeight : 0;
+      var top = target.getBoundingClientRect().top + window.pageYOffset - navHeight;
+      window.scrollTo({ top: top, behavior: 'smooth' });
+    });
+  });
+
+  /* ── Accordion (Delivery OS) ── */
+  document.querySelectorAll('.accordion__header').forEach(function (header) {
+    header.addEventListener('click', function () {
+      var item = this.parentElement;
+      var content = item.querySelector('.accordion__content');
+      var isOpen = item.classList.contains('accordion--open');
+
+      // Close all others
+      document.querySelectorAll('.accordion__item.accordion--open').forEach(function (openItem) {
+        if (openItem !== item) {
+          openItem.classList.remove('accordion--open');
+          openItem.querySelector('.accordion__content').style.maxHeight = null;
+        }
+      });
+
+      // Toggle current
+      if (isOpen) {
+        item.classList.remove('accordion--open');
+        content.style.maxHeight = null;
+      } else {
+        item.classList.add('accordion--open');
+        content.style.maxHeight = content.scrollHeight + 'px';
+      }
+    });
+  });
+
+  /* ── Scroll-Triggered Fade-In ── */
+  if ('IntersectionObserver' in window) {
+    var fadeObserver = new IntersectionObserver(
+      function (entries) {
+        entries.forEach(function (entry) {
+          if (entry.isIntersecting) {
+            entry.target.classList.add('fade-in--visible');
+            fadeObserver.unobserve(entry.target);
+          }
         });
+      },
+      { threshold: 0.1, rootMargin: '0px 0px -40px 0px' }
+    );
+
+    document.querySelectorAll('.fade-in').forEach(function (el) {
+      fadeObserver.observe(el);
+    });
+  } else {
+    // Fallback: show everything
+    document.querySelectorAll('.fade-in').forEach(function (el) {
+      el.classList.add('fade-in--visible');
+    });
+  }
+
+  /* ── Active Nav Highlighting on Scroll ── */
+  var sections = document.querySelectorAll('section[id]');
+  var navLinks = document.querySelectorAll('.nav__link');
+
+  if (sections.length && navLinks.length) {
+    var navHeight = document.querySelector('.nav') ? document.querySelector('.nav').offsetHeight : 0;
+
+    function updateActiveNav() {
+      var scrollPos = window.pageYOffset + navHeight + 100;
+
+      sections.forEach(function (section) {
+        var top = section.offsetTop;
+        var bottom = top + section.offsetHeight;
+        var id = section.getAttribute('id');
+
+        if (scrollPos >= top && scrollPos < bottom) {
+          navLinks.forEach(function (link) {
+            link.classList.remove('nav__link--active');
+            if (link.getAttribute('href') === '#' + id ||
+                link.getAttribute('href').endsWith('#' + id)) {
+              link.classList.add('nav__link--active');
+            }
+          });
+        }
+      });
     }
-    
-    if (mobileNavClose) {
-        mobileNavClose.addEventListener('click', function() {
-            mobileNav.classList.remove('active');
-            overlay.classList.remove('active');
-            document.body.style.overflow = '';
-        });
-    }
-    
-    if (overlay) {
-        overlay.addEventListener('click', function() {
-            mobileNav.classList.remove('active');
-            overlay.classList.remove('active');
-            document.body.style.overflow = '';
-        });
-    }
-    
-    // Header scroll effect
-    window.addEventListener('scroll', function() {
-        if (window.scrollY > 50) {
-            header.classList.add('scrolled');
-        } else {
-            header.classList.remove('scrolled');
-        }
-    });
-    
-    // Active nav link
-    const sections = document.querySelectorAll('section[id]');
-    const navLinks = document.querySelectorAll('.nav-link');
-    
-    window.addEventListener('scroll', function() {
-        let current = '';
-        
-        sections.forEach(section => {
-            const sectionTop = section.offsetTop;
-            const sectionHeight = section.clientHeight;
-            
-            if (pageYOffset >= (sectionTop - 200)) {
-                current = section.getAttribute('id');
-            }
-        });
-        
-        navLinks.forEach(link => {
-            link.classList.remove('active');
-            if (link.getAttribute('href').includes(current)) {
-                link.classList.add('active');
-            }
-        });
-    });
-}
 
-// Scroll animations
-function initScrollAnimations() {
-    const fadeElements = document.querySelectorAll('.fade-in');
-    
-    const fadeInObserver = new IntersectionObserver((entries, observer) => {
-        entries.forEach(entry => {
-            if (entry.isIntersecting) {
-                entry.target.classList.add('active');
-                observer.unobserve(entry.target);
-            }
-        });
-    }, {
-        root: null,
-        threshold: 0.1,
-        rootMargin: '0px 0px -50px 0px'
-    });
-    
-    fadeElements.forEach(element => {
-        fadeInObserver.observe(element);
-    });
-}
-
-// Before/After image slider
-function initBeforeAfterSlider() {
-    const sliders = document.querySelectorAll('.before-after-container');
-    
-    sliders.forEach(slider => {
-        const beforeImage = slider.querySelector('.before-image');
-        const sliderHandle = slider.querySelector('.slider-handle');
-        const sliderButton = slider.querySelector('.slider-button');
-        
-        if (!beforeImage || !sliderHandle || !sliderButton) return;
-        
-        let isDragging = false;
-        
-        const moveSlider = function(e) {
-            if (!isDragging) return;
-            
-            const sliderRect = slider.getBoundingClientRect();
-            const x = e.type === 'touchmove' ? e.touches[0].clientX - sliderRect.left : e.clientX - sliderRect.left;
-            
-            const position = Math.max(0, Math.min(x / sliderRect.width, 1));
-            const percentage = position * 100;
-            
-            beforeImage.style.width = `${percentage}%`;
-            sliderHandle.style.left = `${percentage}%`;
-        };
-        
-        // Mouse events
-        sliderButton.addEventListener('mousedown', () => {
-            isDragging = true;
-        });
-        
-        window.addEventListener('mouseup', () => {
-            isDragging = false;
-        });
-        
-        slider.addEventListener('mousemove', moveSlider);
-        
-        // Touch events
-        sliderButton.addEventListener('touchstart', () => {
-            isDragging = true;
-        }, { passive: true });
-        
-        window.addEventListener('touchend', () => {
-            isDragging = false;
-        });
-        
-        slider.addEventListener('touchmove', moveSlider, { passive: true });
-    });
-}
-
-// Back to top button
-function initBackToTop() {
-    const backToTopBtn = document.querySelector('.back-to-top');
-    
-    if (!backToTopBtn) return;
-    
-    window.addEventListener('scroll', function() {
-        if (window.scrollY > 300) {
-            backToTopBtn.classList.add('active');
-        } else {
-            backToTopBtn.classList.remove('active');
-        }
-    });
-    
-    backToTopBtn.addEventListener('click', function() {
-        window.scrollTo({
-            top: 0,
-            behavior: 'smooth'
-        });
-    });
-}
-
-// Contact form validation
-function initContactForm() {
-    const contactForm = document.querySelector('.contact-form form');
-    
-    if (!contactForm) return;
-    
-    contactForm.addEventListener('submit', function(e) {
-        e.preventDefault();
-        
-        let isValid = true;
-        const nameInput = contactForm.querySelector('input[name="name"]');
-        const emailInput = contactForm.querySelector('input[name="email"]');
-        const messageInput = contactForm.querySelector('textarea[name="message"]');
-        
-        // Simple validation
-        if (nameInput && nameInput.value.trim() === '') {
-            isValid = false;
-            nameInput.classList.add('error');
-        } else if (nameInput) {
-            nameInput.classList.remove('error');
-        }
-        
-        if (emailInput) {
-            const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
-            if (!emailRegex.test(emailInput.value.trim())) {
-                isValid = false;
-                emailInput.classList.add('error');
-            } else {
-                emailInput.classList.remove('error');
-            }
-        }
-        
-        if (messageInput && messageInput.value.trim() === '') {
-            isValid = false;
-            messageInput.classList.add('error');
-        } else if (messageInput) {
-            messageInput.classList.remove('error');
-        }
-        
-        if (isValid) {
-            // In a real implementation, this would send the form data to a server
-            alert('Thank you for your message! I will get back to you soon.');
-            contactForm.reset();
-        }
-    });
-}
-
-// Skill bars animation
-function initSkillBars() {
-    const skillBars = document.querySelectorAll('.skill-bar');
-    
-    if (skillBars.length === 0) return;
-    
-    const skillBarObserver = new IntersectionObserver((entries, observer) => {
-        entries.forEach(entry => {
-            if (entry.isIntersecting) {
-                const skillBar = entry.target;
-                const percentage = skillBar.getAttribute('data-percentage');
-                
-                skillBar.querySelector('.skill-progress').style.width = percentage;
-                
-                observer.unobserve(skillBar);
-            }
-        });
-    }, {
-        threshold: 0.5
-    });
-    
-    skillBars.forEach(bar => {
-        skillBarObserver.observe(bar);
-    });
-}
+    window.addEventListener('scroll', updateActiveNav, { passive: true });
+    updateActiveNav();
+  }
+})();

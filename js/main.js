@@ -1,23 +1,35 @@
 /* ─── PORTFOLIO — main.js ─── */
-/* Mobile menu, smooth scroll, accordion, scroll-fade, active nav */
+/* Navigation, hero carousel, accordion, scroll animations, active nav */
 
 (function () {
   'use strict';
 
+  /* ── Sticky Nav Background on Scroll ── */
+  var nav = document.querySelector('.nav');
+  if (nav) {
+    function updateNav() {
+      if (window.scrollY > 20) {
+        nav.classList.add('nav--scrolled');
+      } else {
+        nav.classList.remove('nav--scrolled');
+      }
+    }
+    window.addEventListener('scroll', updateNav, { passive: true });
+    updateNav();
+  }
+
   /* ── Mobile Hamburger Menu ── */
-  const menuToggle = document.getElementById('menu-toggle');
-  const mobileMenu = document.getElementById('mobile-menu');
+  var menuToggle = document.getElementById('menu-toggle');
+  var mobileMenu = document.getElementById('mobile-menu');
 
   if (menuToggle && mobileMenu) {
     menuToggle.addEventListener('click', function () {
-      const expanded = menuToggle.getAttribute('aria-expanded') === 'true';
+      var expanded = menuToggle.getAttribute('aria-expanded') === 'true';
       menuToggle.setAttribute('aria-expanded', !expanded);
       mobileMenu.classList.toggle('nav__mobile--open');
-      // Toggle hamburger icon to X
       menuToggle.classList.toggle('menu-toggle--active');
     });
 
-    // Close mobile menu when a link is clicked
     mobileMenu.querySelectorAll('a').forEach(function (link) {
       link.addEventListener('click', function () {
         mobileMenu.classList.remove('nav__mobile--open');
@@ -31,14 +43,12 @@
   document.querySelectorAll('a[href*="#"]').forEach(function (anchor) {
     anchor.addEventListener('click', function (e) {
       var href = this.getAttribute('href');
-      // Only handle same-page anchors
       var hashIndex = href.indexOf('#');
       if (hashIndex === -1) return;
       var hash = href.substring(hashIndex);
       var target = document.querySelector(hash);
       if (!target) return;
 
-      // If it's a link like ../index.html#projects, let the browser navigate
       var beforeHash = href.substring(0, hashIndex);
       if (beforeHash && !beforeHash.endsWith(window.location.pathname)) return;
 
@@ -48,6 +58,36 @@
       window.scrollTo({ top: top, behavior: 'smooth' });
     });
   });
+
+  /* ── Hero Carousel ── */
+  var slides = document.querySelectorAll('.hero__slide');
+  var dots = document.querySelectorAll('.hero__dot');
+  var currentSlide = 0;
+  var slideInterval;
+
+  function goToSlide(index) {
+    slides.forEach(function (s) { s.classList.remove('hero__slide--active'); });
+    dots.forEach(function (d) { d.classList.remove('hero__dot--active'); });
+    currentSlide = index;
+    if (slides[currentSlide]) slides[currentSlide].classList.add('hero__slide--active');
+    if (dots[currentSlide]) dots[currentSlide].classList.add('hero__dot--active');
+  }
+
+  function nextSlide() {
+    goToSlide((currentSlide + 1) % slides.length);
+  }
+
+  if (slides.length > 1) {
+    slideInterval = setInterval(nextSlide, 5000);
+
+    dots.forEach(function (dot, i) {
+      dot.addEventListener('click', function () {
+        clearInterval(slideInterval);
+        goToSlide(i);
+        slideInterval = setInterval(nextSlide, 5000);
+      });
+    });
+  }
 
   /* ── Accordion (Delivery OS) ── */
   document.querySelectorAll('.accordion__header').forEach(function (header) {
@@ -64,7 +104,6 @@
         }
       });
 
-      // Toggle current
       if (isOpen) {
         item.classList.remove('accordion--open');
         content.style.maxHeight = null;
@@ -86,14 +125,13 @@
           }
         });
       },
-      { threshold: 0.1, rootMargin: '0px 0px -40px 0px' }
+      { threshold: 0.08, rootMargin: '0px 0px -60px 0px' }
     );
 
     document.querySelectorAll('.fade-in').forEach(function (el) {
       fadeObserver.observe(el);
     });
   } else {
-    // Fallback: show everything
     document.querySelectorAll('.fade-in').forEach(function (el) {
       el.classList.add('fade-in--visible');
     });
@@ -104,10 +142,10 @@
   var navLinks = document.querySelectorAll('.nav__link');
 
   if (sections.length && navLinks.length) {
-    var navHeight = document.querySelector('.nav') ? document.querySelector('.nav').offsetHeight : 0;
+    var navH = document.querySelector('.nav') ? document.querySelector('.nav').offsetHeight : 0;
 
     function updateActiveNav() {
-      var scrollPos = window.pageYOffset + navHeight + 100;
+      var scrollPos = window.pageYOffset + navH + 100;
 
       sections.forEach(function (section) {
         var top = section.offsetTop;

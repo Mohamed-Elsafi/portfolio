@@ -47,28 +47,53 @@
 
   <main>
 
-    <!-- ═══ SECTION 1: HERO ═══ -->
+    <!-- ═══ SECTION 1: HERO CAROUSEL ═══ -->
     <section id="hero" class="hero">
-      <div class="hero__bg" style="background-image: url('images/Mishraq_City_Slab_Rein__Activity.jpg');"></div>
+      <div class="hero__slides">
+        <div class="hero__slide hero__slide--active">
+          <img src="images/Mishraq_City_Slab_Rein__Activity.jpg" alt="Misk City slab reinforcement activity with cranes and crews on mega-project site" loading="eager">
+        </div>
+        <div class="hero__slide">
+          <img src="images/CWARDPICTURE.jpg" alt="Completed C-Ward Expansion Building at KFSH&RC" loading="lazy">
+        </div>
+        <div class="hero__slide">
+          <img src="images/Underground_Water_Tank_Project.jpg" alt="Night concrete pour for underground water tank" loading="lazy">
+        </div>
+        <div class="hero__slide">
+          <img src="images/Mishraq_City_View.jpg" alt="Wide site view of Misk City construction" loading="lazy">
+        </div>
+      </div>
+
       <div class="hero__content">
-        <h1 class="hero__title">Mohamed El-Safi | Senior Project Engineer | Building Delivery</h1>
+        <span class="hero__eyebrow">Senior Project Engineer</span>
+        <h1 class="hero__title">Building Delivery<br>Across Saudi Arabia</h1>
         <p class="hero__subtitle">Over a decade of experience directing complex construction projects across Saudi Arabia, encompasses a diverse portfolio, ranging from Royal palaces and governmental healthcare facilities to urban regional mega-projects. My core methodology centers on translating intricate design intent into buildable work packages, firmly anchored by rigorous QA/QC gates and comprehensive, audit-ready documentation.</p>
-        <div class="metrics">
-          <span class="metrics__item">SAR 1.2B+</span>
-          <span class="metrics__item">10+ Years</span>
-          <span class="metrics__item">100+ Inspection Closures</span>
-          <span class="metrics__item">SAR 65M+ Delivered</span>
-          <span class="metrics__item">Healthcare + Mega-Projects</span>
+        <div class="hero__metrics">
+          <span class="hero__metric">SAR 1.2B+</span>
+          <span class="hero__metric">10+ Years</span>
+          <span class="hero__metric">100+ Inspection Closures</span>
+          <span class="hero__metric">SAR 65M+ Delivered</span>
+          <span class="hero__metric">Healthcare + Mega-Projects</span>
         </div>
         <a href="#projects" class="btn btn--accent">View Delivery Track Record</a>
       </div>
+
+      <div class="hero__dots">
+        <button class="hero__dot hero__dot--active" aria-label="Slide 1"></button>
+        <button class="hero__dot" aria-label="Slide 2"></button>
+        <button class="hero__dot" aria-label="Slide 3"></button>
+        <button class="hero__dot" aria-label="Slide 4"></button>
+      </div>
     </section>
+
 
     <!-- ═══ SECTION 2: PROJECTS ═══ -->
     <section id="projects" class="section">
       <div class="container">
         <h2 class="section__heading fade-in">Delivery Track Record</h2>
-        <div class="card-grid">
+        <p class="section__subheading fade-in">Four case studies spanning mega-project execution, live hospital delivery, and constrained-site infrastructure.</p>
+
+        <div class="card-scroll fade-in-group">
 
           <!-- Case Study 1: Misk City -->
           <article class="card fade-in">
@@ -131,14 +156,17 @@
       </div>
     </section>
 
+
     <!-- ═══ SECTION 3: DELIVERY OPERATING SYSTEM ═══ -->
-    <section id="delivery-os" class="section section--surface">
+    <section id="delivery-os" class="section section--white">
       <div class="container">
         <h2 class="section__heading fade-in">Delivery Operating System</h2>
-        <p class="fade-in" style="max-width:800px; margin-bottom:2rem; line-height:1.7;">The distinction between a clean closeout and a trail of rework, claims, and NCRs is not engineering talent; it is the execution system underpinning the engineering. Over a decade of delivering building projects in KSA, a structured operating rhythm has been developed that treats documentation, readiness gates, and coordination as core delivery instruments, not administrative overhead. The subsections below outline the methodology behind site operations. The downloadable artifacts are working templates drawn from this framework.</p>
+        <p class="section__subheading fade-in">The execution system underpinning the engineering. Documentation, readiness gates, and coordination as core delivery instruments.</p>
+
+        <p class="dos__intro fade-in">The distinction between a clean closeout and a trail of rework, claims, and NCRs is not engineering talent; it is the execution system underpinning the engineering. Over a decade of delivering building projects in KSA, a structured operating rhythm has been developed that treats documentation, readiness gates, and coordination as core delivery instruments, not administrative overhead. The subsections below outline the methodology behind site operations. The downloadable artifacts are working templates drawn from this framework.</p>
 
         <!-- Illustration -->
-        <img src="images/ProgressTrackingTableexportedfromExcel_001.jpg" alt="Color-coded progress and procurement tracking spreadsheet showing submittal status with completion percentages" class="dos-illustration fade-in" loading="lazy">
+        <img src="images/ProgressTrackingTableexportedfromExcel_001.jpg" alt="Color-coded progress and procurement tracking spreadsheet showing submittal status with completion percentages" class="dos__illustration fade-in" loading="lazy">
 
         <!-- Accordion 1: Daily Execution Rhythm -->
         <div class="accordion__item fade-in">
@@ -271,231 +299,155 @@
       </div>
     </section>
 
+
     <!-- ═══ SECTION 4: ABOUT ═══ -->
     <section id="about" class="section">
       <div class="container">
         <h2 class="section__heading fade-in">About</h2>
-        <div class="about__narrative fade-in">
-          <p>Arriving in Saudi Arabia in 2015 marked the beginning of a career built on execution discipline. Initial years were spent delivering high-profile residential and royal projects in Riyadh, including royal palaces and private villas, where demanding finishing standards and strict stakeholder expectations established the foundation for rigorous quality control. Operating within small-team environments without full internal systems necessitated carrying broad responsibility early: site execution, coordination with the main contractor, measurement, payment documentation, and quality assurance. The lesson from that formative period proved enduring: even technically perfect work is commercially invisible without signed documentation. Evidence protects time, money, and trust.</p>
-          <p>From 2018 to 2024, multiple projects were delivered at King Faisal Specialist Hospital & Research Centre (KFSH&RC), a live, operational hospital where governance, approvals, and closeout evidence carry the same weight as physical progress. This period encompassed an underground water tank (SAR 30M, 12m deep excavation, 9,850 m³ concrete, 210 tons steel), a 3,200m perimeter fence, and subsequently the C-Ward Expansion Building (SAR 20M, 200 tons structural steel), a Fire-Rated Doors Retrofit, and a Protocol Office Conversion, approximately SAR 33M in combined delivery. Working inside a functioning hospital reinforced that constraints planning surpasses manpower planning, that phased turnover builds stakeholder trust, and that documentation is protection.</p>
-          <p>Currently operating within a fast-track mega-project environment in Riyadh, Misk City (Al-Mishraq), a SAR 1.2B non-profit campus program, responsibilities include managing multi-zone execution across structural and architectural scopes, coordinating interfaces between site managers and subcontractor crews, and utilizing BIM-enabled coordination alongside Oracle Aconex and Primavera Unifier for audit-ready reporting. Concurrently, AI tools are being integrated into construction documentation workflows, developing methods to auto-draft structured site reports and pre-populate inspection checklists, treating technology as a delivery advantage, not a separate discipline.</p>
-        </div>
+        <p class="section__subheading fade-in">A career built on execution discipline, documented outcomes, and structured delivery.</p>
 
-        <div class="about__callout fade-in">
-          <div class="about__callout-label">Management Style</div>
-          <p>Leadership is exercised through clarity and structured gates: defining buildable work packages, setting inspection readiness standards, assigning owners, and tracking evidence until closure. Technical support is provided when team members encounter obstacles, while maintaining high but practical standards: quality, safety, and productivity are measurable routines, not slogans.</p>
-        </div>
+        <div class="about__grid">
+          <div class="about__narrative fade-in">
+            <p>Arriving in Saudi Arabia in 2015 marked the beginning of a career built on execution discipline. Initial years were spent delivering high-profile residential and royal projects in Riyadh, including royal palaces and private villas, where demanding finishing standards and strict stakeholder expectations established the foundation for rigorous quality control. Operating within small-team environments without full internal systems necessitated carrying broad responsibility early: site execution, coordination with the main contractor, measurement, payment documentation, and quality assurance. The lesson from that formative period proved enduring: even technically perfect work is commercially invisible without signed documentation. Evidence protects time, money, and trust.</p>
+            <p>From 2018 to 2024, multiple projects were delivered at King Faisal Specialist Hospital & Research Centre (KFSH&RC), a live, operational hospital where governance, approvals, and closeout evidence carry the same weight as physical progress. This period encompassed an underground water tank (SAR 30M, 12m deep excavation, 9,850 m³ concrete, 210 tons steel), a 3,200m perimeter fence, and subsequently the C-Ward Expansion Building (SAR 20M, 200 tons structural steel), a Fire-Rated Doors Retrofit, and a Protocol Office Conversion, approximately SAR 33M in combined delivery. Working inside a functioning hospital reinforced that constraints planning surpasses manpower planning, that phased turnover builds stakeholder trust, and that documentation is protection.</p>
+            <p>Currently operating within a fast-track mega-project environment in Riyadh, Misk City (Al-Mishraq), a SAR 1.2B non-profit campus program, responsibilities include managing multi-zone execution across structural and architectural scopes, coordinating interfaces between site managers and subcontractor crews, and utilizing BIM-enabled coordination alongside Oracle Aconex and Primavera Unifier for audit-ready reporting. Concurrently, AI tools are being integrated into construction documentation workflows, developing methods to auto-draft structured site reports and pre-populate inspection checklists, treating technology as a delivery advantage, not a separate discipline.</p>
+          </div>
 
-        <blockquote class="about__quote fade-in">Optimal performance is achieved in environments where decisions are documented, responsibilities are clear, and quality operates as an operational routine, not a poster on the wall.</blockquote>
+          <div class="about__sidebar fade-in">
+            <div class="about__callout">
+              <div class="about__callout-label">Management Style</div>
+              <p>Leadership is exercised through clarity and structured gates: defining buildable work packages, setting inspection readiness standards, assigning owners, and tracking evidence until closure. Technical support is provided when team members encounter obstacles, while maintaining high but practical standards: quality, safety, and productivity are measurable routines, not slogans.</p>
+            </div>
+
+            <blockquote class="about__quote">Optimal performance is achieved in environments where decisions are documented, responsibilities are clear, and quality operates as an operational routine, not a poster on the wall.</blockquote>
+          </div>
+        </div>
       </div>
     </section>
 
+
     <!-- ═══ SECTION 5: SKILLS ═══ -->
-    <section id="skills" class="section section--surface">
+    <section id="skills" class="section section--white">
       <div class="container">
         <h2 class="section__heading fade-in">Skills & Competencies</h2>
+        <p class="section__subheading fade-in">Categorized by depth. Core strengths represent daily operational capability. Growth areas are actively developing. Supporting capabilities are project-specific.</p>
 
-        <!-- Core Strengths -->
-        <div class="skills__tier fade-in">
-          <h3 class="skills__tier-title">Core Strengths</h3>
+        <div class="skills__tiers fade-in">
 
-          <div class="skill-item">
-            <span class="skill__dot skill__dot--strong"></span>
-            <div>
+          <!-- Core Strengths -->
+          <div class="skills__tier skills__tier--core">
+            <h3 class="skills__tier-title">Core Strengths</h3>
+
+            <div class="skill-item">
               <div class="skill__name">Site Execution Leadership (Civil / Structural / Architectural)</div>
               <div class="skill__evidence">Over a decade of multi-zone leadership across live hospital and mega-project environments. Demonstrated workfront control, sequencing discipline, and systematic closure management.</div>
             </div>
-          </div>
-
-          <div class="skill-item">
-            <span class="skill__dot skill__dot--strong"></span>
-            <div>
+            <div class="skill-item">
               <div class="skill__name">QA/QC Systems: ITP, MIR, WIR Readiness</div>
               <div class="skill__evidence">100+ inspection closures across hospital and mega-project sites. Quality control operated through structured gates and pre-checks, not reactive inspection chasing.</div>
             </div>
-          </div>
-
-          <div class="skill-item">
-            <span class="skill__dot skill__dot--strong"></span>
-            <div>
+            <div class="skill-item">
               <div class="skill__name">Interface Management (Civil / Arch / MEP)</div>
               <div class="skill__evidence">Multi-discipline coordination leveraging RFIs, TQs, BIM viewpoints, and evidence-based communication. Most effective when governance supports structured handoffs.</div>
             </div>
-          </div>
-
-          <div class="skill-item">
-            <span class="skill__dot skill__dot--strong"></span>
-            <div>
+            <div class="skill-item">
               <div class="skill__name">Constructability & Field Engineering</div>
               <div class="skill__evidence">On-site problem-solving across complex scopes. Core strength in preventing rework through early detection of clashes, sequencing conflicts, and design-versus-buildability gaps.</div>
             </div>
-          </div>
-
-          <div class="skill-item">
-            <span class="skill__dot skill__dot--strong"></span>
-            <div>
+            <div class="skill-item">
               <div class="skill__name">Quantity Take-Offs & Measurement</div>
               <div class="skill__evidence">Consistent strength across all roles. BOQ preparation, measurement logic, reconciliation, and payment certificate support.</div>
             </div>
-          </div>
-
-          <div class="skill-item">
-            <span class="skill__dot skill__dot--strong"></span>
-            <div>
+            <div class="skill-item">
               <div class="skill__name">Document Control & Systems (Aconex / Unifier / ERP)</div>
               <div class="skill__evidence">Oracle Aconex, Primavera Unifier, and ERP-based activity logging deployed across hospital and mega-project environments. Documentation constitutes a core professional advantage.</div>
             </div>
-          </div>
-
-          <div class="skill-item">
-            <span class="skill__dot skill__dot--strong"></span>
-            <div>
+            <div class="skill-item">
               <div class="skill__name">Shop Drawing Review / Redlines / Revision Control</div>
               <div class="skill__evidence">Proficient at converting design intent into buildable packages through markups, redlines, and controlled revision distribution.</div>
             </div>
-          </div>
-
-          <div class="skill-item">
-            <span class="skill__dot skill__dot--strong"></span>
-            <div>
+            <div class="skill-item">
               <div class="skill__name">Method Statements & Work Packaging</div>
               <div class="skill__evidence">MS/ITP routines anchored across hospital compliance and mega-project execution. Progressing toward writing method statements as production manuals with embedded checkpoints.</div>
             </div>
-          </div>
-
-          <div class="skill-item">
-            <span class="skill__dot skill__dot--strong"></span>
-            <div>
+            <div class="skill-item">
               <div class="skill__name">Workfront Planning & Sequencing (Daily / Weekly)</div>
               <div class="skill__evidence">Area ownership under shifting priorities. Closure of stalled workfronts through constraint identification, resolution sequencing, and evidence-based escalation.</div>
             </div>
-          </div>
-
-          <div class="skill-item">
-            <span class="skill__dot skill__dot--strong"></span>
-            <div>
+            <div class="skill-item">
               <div class="skill__name">Progress Reporting & Dashboards (Excel)</div>
               <div class="skill__evidence">Weekly and monthly dashboards, progress trackers with color-coded status systems, and cycle-time monitoring. Designed to support decision-making, not merely filing.</div>
             </div>
-          </div>
-
-          <div class="skill-item">
-            <span class="skill__dot skill__dot--strong"></span>
-            <div>
+            <div class="skill-item">
               <div class="skill__name">People Leadership (Engineers / Foremen / Subcontractors)</div>
               <div class="skill__evidence">Led teams ranging from 10 to 100+ personnel. Clear expectations, technical support when blocked, and high but practical standards for quality and safety.</div>
             </div>
-          </div>
-
-          <div class="skill-item">
-            <span class="skill__dot skill__dot--strong"></span>
-            <div>
+            <div class="skill-item">
               <div class="skill__name">Stakeholder Coordination (Client / Consultant / Authorities)</div>
               <div class="skill__evidence">Extensive experience in live hospital and approvals-intensive environments. Evidence-based communication and options-driven escalation.</div>
             </div>
           </div>
-        </div>
 
-        <!-- Active Growth -->
-        <div class="skills__tier fade-in">
-          <h3 class="skills__tier-title">Active Growth Areas</h3>
+          <!-- Active Growth -->
+          <div class="skills__tier skills__tier--growth">
+            <h3 class="skills__tier-title">Active Growth Areas</h3>
 
-          <div class="skill-item">
-            <span class="skill__dot skill__dot--moderate"></span>
-            <div>
+            <div class="skill-item">
               <div class="skill__name">Look-Ahead Planning (2–4 Weeks) & Constraints Removal</div>
               <div class="skill__evidence">Hospital constraints planning experience and execution planning across roles. Currently formalizing a structured constraints log with time-boxed escalation protocols.</div>
             </div>
-          </div>
-
-          <div class="skill-item">
-            <span class="skill__dot skill__dot--moderate"></span>
-            <div>
+            <div class="skill-item">
               <div class="skill__name">Schedule Language (P6 / Critical Path Influence)</div>
               <div class="skill__evidence">Worked with look-aheads and planning integration. Strengthening float analysis, constraints impact assessment, and critical chain influence on execution decisions.</div>
             </div>
-          </div>
-
-          <div class="skill-item">
-            <span class="skill__dot skill__dot--moderate"></span>
-            <div>
+            <div class="skill-item">
               <div class="skill__name">NCR Handling & Corrective Actions</div>
               <div class="skill__evidence">NCR experience across delivery environments. Strengthening root-cause trend analysis and prevention controls to eliminate repeat non-conformances.</div>
             </div>
-          </div>
-
-          <div class="skill-item">
-            <span class="skill__dot skill__dot--moderate"></span>
-            <div>
+            <div class="skill-item">
               <div class="skill__name">Variation / Extra Works Pricing</div>
               <div class="skill__evidence">Priced extra items and BOQ variations across roles. Strengthening formal variation workflows with evidence packs and structured substantiation.</div>
             </div>
-          </div>
-
-          <div class="skill-item">
-            <span class="skill__dot skill__dot--moderate"></span>
-            <div>
+            <div class="skill-item">
               <div class="skill__name">Progress Valuation / Payment Support</div>
               <div class="skill__evidence">Monthly payment certificates and supporting documentation. Effective when BOQ is clear; strengthening substantiation workflows for complex claims.</div>
             </div>
-          </div>
-
-          <div class="skill-item">
-            <span class="skill__dot skill__dot--moderate"></span>
-            <div>
+            <div class="skill-item">
               <div class="skill__name">Revit (Model Reading / Coordination)</div>
               <div class="skill__evidence">Utilized for coordination and viewpoint-based clash resolution. Functions as coordinator and model consumer, not a full-time BIM modeler; an honest distinction.</div>
             </div>
-          </div>
-
-          <div class="skill-item">
-            <span class="skill__dot skill__dot--moderate"></span>
-            <div>
+            <div class="skill-item">
               <div class="skill__name">Navisworks (Clash Viewpoints)</div>
               <div class="skill__evidence">Applied for interface resolution and saved viewpoints. Expanding into systematic viewpoint-to-RFI linking workflows.</div>
             </div>
           </div>
-        </div>
 
-        <!-- Supporting -->
-        <div class="skills__tier fade-in">
-          <h3 class="skills__tier-title">Supporting Capabilities</h3>
+          <!-- Supporting -->
+          <div class="skills__tier skills__tier--support">
+            <h3 class="skills__tier-title">Supporting Capabilities</h3>
 
-          <div class="skill-item">
-            <span class="skill__dot skill__dot--supporting"></span>
-            <div>
+            <div class="skill-item">
               <div class="skill__name">AutoCAD (2D & 3D)</div>
               <div class="skill__evidence">Strong capability. Utilized for coordination, markups, shop drawing control, and as-built preparation across all roles.</div>
             </div>
-          </div>
-
-          <div class="skill-item">
-            <span class="skill__dot skill__dot--supporting"></span>
-            <div>
+            <div class="skill-item">
               <div class="skill__name">Tekla Structures</div>
               <div class="skill__evidence">Applied for 3D structural steel modeling and documentation on the C-Ward project. Effective as a coordination tool; depth is project-specific rather than full-time modeling.</div>
             </div>
-          </div>
-
-          <div class="skill-item">
-            <span class="skill__dot skill__dot--supporting"></span>
-            <div>
+            <div class="skill-item">
               <div class="skill__name">STAAD.Pro / Robot Structural Analysis</div>
               <div class="skill__evidence">Listed capability with some project exposure. Honest assessment: recency is limited. Positioned as review and coordination capability, not current production use.</div>
             </div>
-          </div>
-
-          <div class="skill-item">
-            <span class="skill__dot skill__dot--supporting"></span>
-            <div>
+            <div class="skill-item">
               <div class="skill__name">PMP Certification</div>
               <div class="skill__evidence">Not yet certified. Planned to formalize governance language, stakeholder management, and structured escalation. The principles have been applied in delivery across multiple projects; the methodology section of this portfolio serves as evidence.</div>
             </div>
           </div>
-        </div>
 
+        </div>
       </div>
     </section>
+
 
     <!-- ═══ SECTION 6: CONTACT ═══ -->
     <section id="contact" class="section section--dark">
